@@ -17,7 +17,7 @@ pipeline {
 
         stage ('Plan') {
             when {
-                expression { params.ACTION == 'Plan' || param.ACTION == 'Apply'}
+                expression { params.ACTION == 'Plan' || params.ACTION == 'Apply'}
             }
             steps {
                 sh "cd main && terraform plan -var-file='../config/config.tfvars'"                
