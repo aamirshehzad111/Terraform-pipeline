@@ -26,7 +26,7 @@ pipeline {
 
         stage ('Apply') {
             when {
-                expression { param.ACTION == 'Apply'}
+                expression { params.ACTION == 'Apply'}
             }
             steps {
                 sh "cd main && terraform apply -var-file='../config/config.tfvars --auto-approve"
