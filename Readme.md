@@ -25,3 +25,15 @@ And perform first these setps
 
 Caution:
 4- terraform destroy -var-file="../config/config.tfvars" --> will destroy resources
+
+ stage('Set Terraform path') {
+ steps {
+ script {
+ def tfHome = tool name: 'Terraform'
+ env.PATH = "${tfHome}:${env.PATH}"
+ }
+ sh 'terraform — version'
+ 
+ 
+ }
+ }
